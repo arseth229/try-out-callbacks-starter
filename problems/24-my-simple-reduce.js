@@ -34,8 +34,14 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
   optional initial accumulator
 *******************************************************************************/
 
-let mySimpleReduce = function() {
-
+let mySimpleReduce = function(array, callback) {
+    let first = array[0]
+    for (let val of array) {
+        if (val !== array[0]) {
+        first = callback(first, val);
+        } 
+    }
+    return first; 
 };
 
 
